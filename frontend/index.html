@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AIHEXA Eğitim Başvuru Formu</title>
+</head>
+
+<body>
+
+    <h1>AIHEXA Eğitim Başvuru Formu</h1>
+
+    <form autocomplete="on">
+
+        <fieldset>
+            <legend>Kişisel Bilgiler</legend>
+
+            <label for="name">Ad Soyad:</label><br>
+            <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    autocomplete="name"
+                    required
+            >
+
+            <br><br>
+
+            <label for="email">E-posta:</label><br>
+            <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    autocomplete="email"
+                    required
+            >
+
+            <br><br>
+
+            <label for="phone">Telefon:</label><br>
+            <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    autocomplete="tel"
+            >
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Eğitim Bilgileri</legend>
+
+            <label for="education">Eğitim Seçiniz:</label><br>
+
+            <select id="education" name="education" required>
+                <option value="">Eğitim seçiniz</option>
+                <option value="java">Java Full Stack</option>
+                <option value="react">React</option>
+                <option value="python">Python</option>
+                <option value="ai">Yapay Zekâ</option>
+            </select>
+
+            <br><br>
+
+            <label for="technologies">
+                İlgilendiğiniz Teknolojiler:
+            </label><br>
+
+            <select
+                    id="technologies"
+                    name="technologies"
+                    multiple
+            >
+                <option value="java">Java</option>
+                <option value="spring">Spring Boot</option>
+                <option value="react">React</option>
+                <option value="docker">Docker</option>
+                <option value="postgresql">PostgreSQL</option>
+            </select>
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+            <legend>Ek Bilgiler</legend>
+
+            <label for="message">Açıklama:</label><br>
+
+            <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    cols="40"
+                    placeholder="Eğitimden beklentilerinizi yazınız..."
+            ></textarea>
+
+            <br><br>
+
+            <label for="file">Dosya Yükle:</label><br>
+
+            <input
+                    type="file"
+                    id="file"
+                    name="file"
+                    multiple
+            >
+
+        </fieldset>
+
+        <br>
+
+        <button type="submit">Başvuruyu Gönder</button>
+
+    </form>
+
+</body>
+</html>
