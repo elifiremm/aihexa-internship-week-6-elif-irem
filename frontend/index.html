@@ -3,118 +3,331 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>AIHEXA Eğitim Başvuru Formu</title>
+
+    <!-- Bootstrap 5 -->
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 </head>
 
-<body>
+<body class="bg-light">
 
-    <h1>AIHEXA Eğitim Başvuru Formu</h1>
+<nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">AIHEXA</a>
 
-    <form autocomplete="on">
+        <!-- Dropdown -->
+        <div class="dropdown">
+            <button
+                class="btn btn-outline-light dropdown-toggle"
+                type="button"
+                data-bs-toggle="dropdown"
+            >
+                Menü
+            </button>
 
-        <fieldset>
-            <legend>Kişisel Bilgiler</legend>
+            <ul class="dropdown-menu dropdown-menu-end">
+                <li>
+                    <a class="dropdown-item" href="#">Ana Sayfa</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">Eğitimler</a>
+                </li>
+                <li>
+                    <a class="dropdown-item" href="#">İletişim</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
-            <label for="name">Ad Soyad:</label><br>
-            <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    autocomplete="name"
-                    required
+<div class="container py-5">
+
+    <div class="card shadow-sm">
+        <div class="card-body p-4">
+
+            <h1 class="mb-4">Eğitim Başvuru Formu</h1>
+
+            <form
+                id="applicationForm"
+                class="needs-validation"
+                autocomplete="on"
+                novalidate
             >
 
-            <br><br>
+                <fieldset class="mb-4">
 
-            <label for="email">E-posta:</label><br>
-            <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    autocomplete="email"
-                    required
-            >
+                    <legend class="fs-5">
+                        Kişisel Bilgiler
+                    </legend>
 
-            <br><br>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">
+                            Ad Soyad
+                        </label>
 
-            <label for="phone">Telefon:</label><br>
-            <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    autocomplete="tel"
-            >
+                        <input
+                            type="text"
+                            class="form-control"
+                            id="name"
+                            name="name"
+                            autocomplete="name"
+                            required
+                        >
 
-        </fieldset>
+                        <div class="invalid-feedback">
+                            Lütfen adınızı ve soyadınızı giriniz.
+                        </div>
+                    </div>
 
-        <br>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">
+                            E-posta
+                        </label>
 
-        <fieldset>
-            <legend>Eğitim Bilgileri</legend>
+                        <input
+                            type="email"
+                            class="form-control"
+                            id="email"
+                            name="email"
+                            autocomplete="email"
+                            required
+                        >
 
-            <label for="education">Eğitim Seçiniz:</label><br>
+                        <div class="invalid-feedback">
+                            Geçerli bir e-posta adresi giriniz.
+                        </div>
+                    </div>
 
-            <select id="education" name="education" required>
-                <option value="">Eğitim seçiniz</option>
-                <option value="java">Java Full Stack</option>
-                <option value="react">React</option>
-                <option value="python">Python</option>
-                <option value="ai">Yapay Zekâ</option>
-            </select>
+                    <div class="mb-3">
+                        <label for="phone" class="form-label">
+                            Telefon
+                        </label>
 
-            <br><br>
+                        <input
+                            type="tel"
+                            class="form-control"
+                            id="phone"
+                            name="phone"
+                            autocomplete="tel"
+                            required
+                        >
 
-            <label for="technologies">
-                İlgilendiğiniz Teknolojiler:
-            </label><br>
+                        <div class="invalid-feedback">
+                            Telefon numarası zorunludur.
+                        </div>
+                    </div>
 
-            <select
-                    id="technologies"
-                    name="technologies"
-                    multiple
-            >
-                <option value="java">Java</option>
-                <option value="spring">Spring Boot</option>
-                <option value="react">React</option>
-                <option value="docker">Docker</option>
-                <option value="postgresql">PostgreSQL</option>
-            </select>
+                </fieldset>
 
-        </fieldset>
+                <fieldset class="mb-4">
 
-        <br>
+                    <legend class="fs-5">
+                        Eğitim Bilgileri
+                    </legend>
 
-        <fieldset>
-            <legend>Ek Bilgiler</legend>
+                    <div class="mb-3">
+                        <label for="education" class="form-label">
+                            Eğitim Seçiniz
+                        </label>
 
-            <label for="message">Açıklama:</label><br>
+                        <select
+                            class="form-select"
+                            id="education"
+                            name="education"
+                            required
+                        >
+                            <option value="">
+                                Eğitim seçiniz
+                            </option>
+                            <option value="java">
+                                Java Full Stack
+                            </option>
+                            <option value="react">
+                                React
+                            </option>
+                            <option value="python">
+                                Python
+                            </option>
+                            <option value="ai">
+                                Yapay Zekâ
+                            </option>
+                        </select>
 
-            <textarea
-                    id="message"
-                    name="message"
-                    rows="5"
-                    cols="40"
-                    placeholder="Eğitimden beklentilerinizi yazınız..."
-            ></textarea>
+                        <div class="invalid-feedback">
+                            Bir eğitim seçiniz.
+                        </div>
+                    </div>
 
-            <br><br>
+                    <div class="mb-3">
+                        <label for="technologies" class="form-label">
+                            İlgilendiğiniz Teknolojiler
+                        </label>
 
-            <label for="file">Dosya Yükle:</label><br>
+                        <select
+                            class="form-select"
+                            id="technologies"
+                            name="technologies"
+                            multiple
+                        >
+                            <option value="java">Java</option>
+                            <option value="spring">Spring Boot</option>
+                            <option value="react">React</option>
+                            <option value="docker">Docker</option>
+                            <option value="postgresql">PostgreSQL</option>
+                        </select>
 
-            <input
-                    type="file"
-                    id="file"
-                    name="file"
-                    multiple
-            >
+                        <div class="form-text">
+                            Birden fazla seçim yapabilirsiniz.
+                        </div>
+                    </div>
 
-        </fieldset>
+                </fieldset>
 
-        <br>
+                <fieldset class="mb-4">
 
-        <button type="submit">Başvuruyu Gönder</button>
+                    <legend class="fs-5">
+                        Ek Bilgiler
+                    </legend>
 
-    </form>
+                    <div class="mb-3">
+                        <label for="message" class="form-label">
+                            Açıklama
+                        </label>
+
+                        <textarea
+                            class="form-control"
+                            id="message"
+                            name="message"
+                            rows="4"
+                            placeholder="Eğitimden beklentilerinizi yazınız..."
+                        ></textarea>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="file" class="form-label">
+                            Dosya Yükle
+                        </label>
+
+                        <input
+                            type="file"
+                            class="form-control"
+                            id="file"
+                            name="file"
+                            multiple
+                        >
+
+                        <div class="form-text">
+                            Birden fazla belge seçebilirsiniz.
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <div class="form-check mb-4">
+
+                    <input
+                        class="form-check-input"
+                        type="checkbox"
+                        id="approval"
+                        required
+                    >
+
+                    <label
+                        class="form-check-label"
+                        for="approval"
+                    >
+                        Bilgilerimin işlenmesini kabul ediyorum.
+                    </label>
+
+                    <div class="invalid-feedback">
+                        Devam etmek için onay vermelisiniz.
+                    </div>
+
+                </div>
+
+                <button
+                    class="btn btn-primary"
+                    type="submit"
+                >
+                    Başvuruyu Gönder
+                </button>
+
+            </form>
+
+        </div>
+    </div>
+
+</div>
+
+<!-- Başarı Toast -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+
+    <div
+        id="successToast"
+        class="toast"
+        role="alert"
+    >
+
+        <div class="toast-header">
+
+            <strong class="me-auto">
+                AIHEXA
+            </strong>
+
+            <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="toast"
+            ></button>
+
+        </div>
+
+        <div class="toast-body">
+            Başvurunuz başarıyla alındı.
+        </div>
+
+    </div>
+
+</div>
+
+<script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+</script>
+
+<script>
+
+    const form = document.getElementById("applicationForm");
+
+    form.addEventListener("submit", function (event) {
+
+        event.preventDefault();
+
+        if (!form.checkValidity()) {
+
+            event.stopPropagation();
+
+            form.classList.add("was-validated");
+
+            return;
+        }
+
+        form.classList.add("was-validated");
+
+        const toastElement =
+            document.getElementById("successToast");
+
+        const toast =
+            new bootstrap.Toast(toastElement);
+
+        toast.show();
+
+    });
+
+</script>
 
 </body>
 </html>
